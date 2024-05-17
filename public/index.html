@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>htareque</title>
+  </head>
+  <body>
+    <style>
+      	body
+	{
+		font-family: monospace;
+	}
+    </style>
+      <h1>Hello my friends!</h1>
+      <div class="text-animation" id="text-animation"></div>
+  </body>
+  <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const textElement = document.getElementById("text-animation");
+            const baseText = "site under construction";
+            let dotIndex = 0;
+            let dotModulo = 2;
+
+            setInterval(() => {
+                textElement.textContent = 
+`${baseText}${".".repeat(dotIndex)}`;
+                dotIndex = (dotIndex + 1) % dotModulo;
+                dotModulo += dotIndex === 0;
+            }, 500);
+        });
+    </script>
+</html>
+
+
